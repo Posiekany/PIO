@@ -1,0 +1,41 @@
+erDiagram
+          Ksiazka {
+              string autor
+              string tytul
+              string gatunek
+              int numer 
+              string wydawnictwo
+              string stan
+              int wydanie
+              string jezyk
+              dateFormat data_wydania 
+            }
+            
+      Czytelnik {
+          int numer_identyfikacyjny
+          string imie 
+          string nazwisko
+      }
+
+      Pracownik_biblioteki {
+          int id
+          string imie
+          string nazwisko
+
+      }
+
+      Wypozyczenie{
+        int id 
+        dateFormat data_wyp
+        dateFormat data_zwrotu
+        int l_przedluzen
+        int numer_ksiazki
+        int id_czytelnika
+        int id_pracownika
+
+      }
+
+
+      Ksiazka }|--|| Wypozyczenie : jest_wypozyczana
+      Wypozyczenie }|--|| Czytelnik : wypozycza
+      Wypozyczenie }|--|| Pracownik_biblioteki : wypozycza_komus
